@@ -12,10 +12,9 @@ app.use('/users', users);
 app.use('/cards', cards);
 app.use((req, res) => {
   res.status('404');
-  res.send({ "message": "Запрашиваемый ресурс не найден" });
+  res.send({ message: 'Запрашиваемый ресурс не найден' });
 });
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`)
+  console.log(`App listening on port ${PORT}`);
 });
-

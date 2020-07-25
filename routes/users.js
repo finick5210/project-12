@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const router = require('express').Router();
+
 const PATH = './data/users.json';
 
 router.get('/', (req, res) => {
@@ -11,21 +12,20 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  fs.readFile(path.join(PATH), { encoding: 'utf8' }, function (err, users) {
+  fs.readFile(path.join(PATH), { encoding: 'utf8' }, (err, users) => {
     if (err) {
       return;
     }
 
-    const user = JSON.parse(users).find((user) => {
-      return user._id === req.params.id;
-    });
+    /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
+    const foundUser = JSON.parse(users).find((user) => user._id === req.params.id);
 
-    if (!user) {
+    if (!foundUser) {
       res.status('404');
-      res.send({ "message": "Нет пользователя с таким id" });
+      res.send({ message: 'Нет пользователя с таким id' });
       return;
     }
-    res.send(user);
+    res.send(foundUser);
   });
 });
 
