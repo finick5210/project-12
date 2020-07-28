@@ -1,0 +1,31 @@
+{
+  "name": "project-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finick5210/project-12.git"
+  },
+  "keywords": [],
+  "author": "$finick5210 (https://github.com/finick5210)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finick5210/project-12/issues"
+  },
+  "homepage": "https://github.com/finick5210/project-12#readme",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
